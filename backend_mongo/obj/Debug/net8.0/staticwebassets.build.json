@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "yp/rN5nV83rvP8fmW6o9roTbb2YglET3l0aaj+2X/tQ=",
+  "Source": "backend_mongo",
+  "BasePath": "_content/backend_mongo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

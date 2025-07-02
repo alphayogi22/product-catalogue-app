@@ -1,0 +1,29 @@
+{
+  "profiles": {
+    "backend_mongo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64195;http://localhost:64196"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionStrings__MongoDb":"mongodb+srv://yogeshratudi97:8XWtncpbVmLf3yvi@productcluster.vapxfpp.mongodb.net/?retryWrites=true&w=majority&appName=ProductCluster"
+
+      }
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:51822/",
+      "sslPort": 44311
+    }
+  }
+}
