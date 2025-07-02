@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'backend_mongo/**'
-      - '.github/workflows/backend.yml'
+      - "backend_mongo/**"
+      - ".github/workflows/backend.yml"
 
 jobs:
   build-deploy:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: "8.0.x"
 
       - name: Restore dependencies
         run: dotnet restore ./backend_mongo/backend_mongo.csproj
@@ -31,7 +31,7 @@ jobs:
         run: dotnet publish ./backend_mongo/backend_mongo.csproj --configuration Release --output ./backend_mongo/out
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: backend-artifact
           path: ./backend_mongo/out

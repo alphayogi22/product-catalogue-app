@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'product-app/**'
-      - '.github/workflows/frontend.yml'
+      - "product-app/**"
+      - ".github/workflows/frontend.yml"
 
 jobs:
   build-deploy:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install dependencies
         working-directory: product-app
@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: frontend-build
           path: product-app/build
