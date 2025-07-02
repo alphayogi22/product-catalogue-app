@@ -14,7 +14,7 @@ const ProductsPage: React.FC = () => {
   const [formName, setFormName] = useState('');
   const [formPrice, setFormPrice] = useState<number>(0);
 
-  const apiBase = 'https://localhost:44311/api/products'; // Replace with your API URL
+  const apiBase = 'https://product-backend-omby.onrender.com/api/products'; // Replace with your API URL
 
   useEffect(() => {
     fetch(apiBase)
