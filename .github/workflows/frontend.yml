@@ -1,4 +1,4 @@
-name: Frontend CI/CD
+name: Frontend CI/CD Netlify Deploy
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
@@ -26,13 +26,12 @@ jobs:
           cd product-app
           npm install
 
-      - name: Build
+      - name: Build React app
         run: |
           cd product-app
           npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-build
-          path: product-app/build
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --dir=product-app/build --site=${{ secrets.NETLIFY_SITE_ID }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
