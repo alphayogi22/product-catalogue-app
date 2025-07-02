@@ -2,18 +2,21 @@ services:
   - type: web
     name: product-backend
     env: docker
-    repo: https://github.com/alphayogi22/product-catalogue-app
-    branch: main
-    region: oregon
-    rootDir: backend_mongo
     plan: free
-
-  - type: web
-    name: product-frontend
     repo: https://github.com/alphayogi22/product-catalogue-app
     branch: main
+    rootDir: backend_mongo
     region: oregon
+    envVars:
+      - key: ConnectionStrings__MongoDb
+        value: mongodb+srv://yogeshratudi97:8XWtncpbVmLf3yvi@productcluster.vapxfpp.mongodb.net/?retryWrites=true&w=majority&appName=ProductCluster
+
+staticSites:
+  - name: product-frontend
+    plan: free
+    repo: https://github.com/alphayogi22/product-catalogue-app
+    branch: main
     rootDir: product-app
     buildCommand: npm install && npm run build
-    startCommand: serve -s build
-    plan: free
+    staticPublishPath: build
+    region: oregon
