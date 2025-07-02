@@ -11,8 +11,8 @@ services:
       - key: ConnectionStrings__MongoDb
         value: mongodb+srv://yogeshratudi97:8XWtncpbVmLf3yvi@productcluster.vapxfpp.mongodb.net/?retryWrites=true&w=majority&appName=ProductCluster
 
-staticSites:
-  - name: product-frontend
+  - type: static
+    name: product-frontend
     plan: free
     repo: https://github.com/alphayogi22/product-catalogue-app
     branch: main
