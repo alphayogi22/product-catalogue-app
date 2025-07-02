@@ -1,4 +1,4 @@
-name: Backend CI/CD
+name: Backend CI/CD Render Deploy
 
 on:
   push:
@@ -16,22 +16,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: "8.0.x"
+      - name: Build Docker image (validate locally)
+        run: |
+          docker build -t product-backend ./backend_mongo
 
-      - name: Restore dependencies
-        run: dotnet restore ./backend_mongo/backend_mongo.csproj
+      - name: Trigger deploy on Render
+        run: |
+            curl -X POST "https://api.render.com/v1/services/${{ srv-d1ir21h5pdvs73avq9u0 }}/deploys" \
+          -H "Authorization: Bearer ${{ rnd_hO07p9xu5WZNk0MQqh3RwQk89xpL }}" \
+          -H "Accept: application/json" \
+          -d '{}'
 
-      - name: Build
-        run: dotnet build ./backend_mongo/backend_mongo.csproj --configuration Release
-
-      - name: Publish
-        run: dotnet publish ./backend_mongo/backend_mongo.csproj --configuration Release --output ./backend_mongo/out
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: backend-artifact
-          path: ./backend_mongo/out
