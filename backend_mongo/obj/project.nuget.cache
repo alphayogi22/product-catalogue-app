@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lQS5skycPvo=",
+  "dgSpecHash": "pbPr61LcNas=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Demo-RIT\\backend_mongo\\backend_mongo.csproj",
+  "projectFilePath": "C:\\Projects\\Demo-RIT\\Product-list-demo-app\\backend_mongo\\backend_mongo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RatudiY\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\RatudiY\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
